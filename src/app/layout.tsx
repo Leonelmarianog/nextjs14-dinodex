@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/header";
 
 const inter = Press_Start_2P({ subsets: ["latin"], weight: "400" });
 
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-red-300">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
